@@ -1,0 +1,15 @@
+{
+  "name": "simple-utils-tiny",
+  "version": "1.0.3",
+  "description": "Some simple utils function for js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utils",
+    "js"
+  ],
+  "author": "Lenno kiki",
+  "license": "ISC"
+}
