@@ -41,12 +41,12 @@ export function RegExp_isFloat(num, type) {
 }
 
 export function RegExp_isPhone(str) {
-  var reg = /^0?1[3456789]\d{9}$/;
+  var reg = /^1[3456789]\d{9}$/;
   return reg.test(str);
 }
 
 export function RegExp_isTel(str) {
-  var reg = /^0\d{2, 3}-?\d{7, 8}(-\d{1, 4})?$/;
+  var reg = /^0\d{2,3}-?\d{7,8}(-\d{1,4})?$/;
   return reg.test(str);
 }
 
@@ -70,7 +70,7 @@ export function RegExp_isUrl(str) {
   return reg.test(str);
 }
 
-export function RegExp_isPC(str) {
+export function RegExp_isPC() {
   var ua = navigator.userAgent.toLowerCase(),
       platforms = ['android', 'iphone', 'windows phone', 'ipod', 'ipad'],
       flag = true,
