@@ -1,6 +1,6 @@
 {
   "name": "simple-utils-tiny",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Some simple utils function for js",
   "main": "index.js",
   "scripts": {
