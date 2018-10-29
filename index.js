@@ -1,29 +1,29 @@
-import { Type_isEqual, Type_is } from './files/Type.js';
-import { String_trim, String_transCase } from './files/String.js';
-import { RegExp_isInteger, RegExp_isFloat, RegExp_isPhone, RegExp_isTel, RegExp_isChinese, RegExp_isEmail, RegExp_isID, 
-  RegExp_isUrl, RegExp_isPC, RegExp_thousandMark, RegExp_browserType, RegExp_allowInteger, RegExp_allowFloat } from './files/RegExp.js';
+import { typeIsEqual, typeIs } from './files/type.js';
+import { stringTrim, stringTransCase } from './files/string.js';
+import { rgIsInteger, rgIsFloat, rgIsPhone, rgIsTel, rgIsChinese, rgIsEmail, rgIsID,
+  rgIsUrl, rgIsPC, rgThousandMark, rgBrowserType, rgAllowInteger, rgAllowFloat } from './files/regexp.js';
 
 var sUtils = {
-  Type_isEqual,
-  Type_is,
-  String_trim,
-  String_transCase,
-  RegExp_isInteger,
-  RegExp_isFloat,
-  RegExp_isPhone,
-  RegExp_isTel,
-  RegExp_isChinese,
-  RegExp_isEmail,
-  RegExp_isID,
-  RegExp_isUrl,
-  RegExp_isPC,
-  RegExp_thousandMark,
-  RegExp_browserType,
-  RegExp_allowInteger,
-  RegExp_allowFloat
+  typeIsEqual,
+  typeIs,
+  stringTrim,
+  stringTransCase,
+  rgIsInteger,
+  rgIsFloat,
+  rgIsPhone,
+  rgIsTel,
+  rgIsChinese,
+  rgIsEmail,
+  rgIsID,
+  rgIsUrl,
+  rgIsPC,
+  rgThousandMark,
+  rgBrowserType,
+  rgAllowInteger,
+  rgAllowFloat
 }
 
-export { Type_isEqual,  Type_is, String_trim, String_transCase, RegExp_isInteger, RegExp_isFloat, RegExp_isPhone, RegExp_isTel, RegExp_isChinese, 
-  RegExp_isEmail, RegExp_isID, RegExp_isUrl, RegExp_isPC, RegExp_thousandMark, RegExp_browserType, RegExp_allowInteger, RegExp_allowFloat }
+export { typeIsEqual, typeIs, stringTrim, stringTransCase, rgIsInteger, rgIsFloat, rgIsPhone, rgIsTel, rgIsChinese,
+  rgIsEmail, rgIsID, rgIsUrl, rgIsPC, rgThousandMark, rgBrowserType, rgAllowInteger, rgAllowFloat }
 
 export default sUtils
