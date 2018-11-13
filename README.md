@@ -169,18 +169,18 @@ const res = rgAllowInteger(yoruInputValue, '-')
 type defaul 'all', integerLen default 9, floatLen default 2
 
 ```js
-// Only float input is allowed, and positive and negative 
+// Only float or integer input is allowed, and positive and negative 
 // float are independently judged.
 
-// Allow positive and negative float and max integer length 9
+// Allow positive and negative float or integer and max integer length 9
 // max float length 2
 const res = rgAllowFloat(yourInputValue) 
 
-// Only positive float and max integer length 9 
+// Only positive float or integer and max integer length 9 
 // max float length 4
 const res = rgAllowFloat(yourInputValue, '+', 5, 4)
 
-// Only negative float and max integer length 7 
+// Only negative float or integer and max integer length 7 
 // max float length 1
 const res = rgAllowFloat(yoruInputValue, '-', 7, 1)
 ```
