@@ -1,6 +1,6 @@
 # simle-utils-tiny
 
-Some useful utils function for javascript
+Some useful regexp utils function for javascript
 
 ## Features
 
@@ -146,43 +146,43 @@ rgIsFloat(123.24, '-') // false
 rgIsFloat(-123.24, '-') // true
 ```
 
-##### rgAllowInteger(str[, type, len])
+##### rgAllowInteger(str[, len, type])
 
-type defaul 'all', len default 9
+type defaul 'all', len default unlimited 
 
 ```js
 // Only integer input is allowed, and positive and negative 
 // integers are independently judged.
 
-// Allow positive and negative integer, and max length 9
+// Allow positive and negative integer and unlimited length
 const res = rgAllowInteger(yourInputValue) 
 
 // Only positive integer, and max length 5
 const res = rgAllowInteger(yourInputValue, '+', 5)
 
-// Only negative integer, and max length 9
+// Only negative integer and unlimited size
 const res = rgAllowInteger(yoruInputValue, '-')
 ```
 
-##### rgAllowFloat(str[, type, integerLen, floatLen])
+##### rgAllowFloat(str[, floatLen, type, integerLen])
 
-type defaul 'all', integerLen default 9, floatLen default 2
+type defaul 'all', integerLen default unlimited, floatLen default 2
 
 ```js
 // Only float or integer input is allowed, and positive and negative 
 // float are independently judged.
 
-// Allow positive and negative float or integer and max integer length 9
+// Allow positive and negative float or integer and integer length unlimited
 // max float length 2
 const res = rgAllowFloat(yourInputValue) 
 
-// Only positive float or integer and max integer length 9 
+// Only positive float or integer and max integer length 5 
 // max float length 4
-const res = rgAllowFloat(yourInputValue, '+', 5, 4)
+const res = rgAllowFloat(yourInputValue, 4, '+', 5)
 
-// Only negative float or integer and max integer length 7 
+// Only negative float or integer and max integer length 7
 // max float length 1
-const res = rgAllowFloat(yoruInputValue, '-', 7, 1)
+const res = rgAllowFloat(yourInputValue, 1, '-', 7)
 ```
 
 
@@ -191,6 +191,20 @@ const res = rgAllowFloat(yoruInputValue, '-', 7, 1)
 ```js
 // Judge target whether is a mobile phone number
 const res = rgIsPhone(phoneNum) 
+```
+
+##### rgIsTel(str)
+
+```js
+// Judge target whether is a telphone number
+const res = rgIsTel(telNum) 
+```
+
+##### rgIsTelOrMobile(str)
+
+```js
+// Judge target whether is a mobile phone or telphone number
+const res = rgIsTelOrMobile(phoneOrTelNum) 
 ```
 
 ##### rgIsTel(str)
@@ -250,6 +264,6 @@ const res = rgThousandMark('12,345.34', '-') // 12345.34
 // whether to return to the 360 browser environment. 
 
 // Judge result contains (Edge, FF, Wechat, QQ, Maxthon, LB, Baidu
-// Safari, UC, Opear, Sougou, 360, Chrome
+// Safari, UC, Opear, Sougou, 360, Chrome)
 const res = rgBrowserType()
 ```

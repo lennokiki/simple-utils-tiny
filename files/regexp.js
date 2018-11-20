@@ -38,7 +38,12 @@ export function rgIsPhone(str) {
 }
 
 export function rgIsTel(str) {
-  var reg = /^0\d{2,3}-?\d{7,8}(-\d{1,4})?$/;
+  var reg = /^(0\d{2,3}-?)?\d{7,8}(-?\d{1,4})?$/;
+  return reg.test(str);
+}
+
+export function rgIsTelOrMobile(str) {
+  var reg = /^((0\d{2,3}-?)?\d{7,8}(-?\d{1,4})?|1[3456789]\d{9})$/;
   return reg.test(str);
 }
 
@@ -58,7 +63,7 @@ export function rgIsID(str) {
 }
 
 export function rgIsUrl(str) {
-  var reg = /^(https?:|ftp:)?\/\/\w+\..*$/;
+  var reg = /^((https?:\/\/|ftp:\/\/)?|(\/\/)?)\w+\..*$/;
   return reg.test(str);
 }
 
@@ -82,7 +87,7 @@ export function rgThousandMark(str, type) {
   type = type || '+';
   switch (type) {
     case '+':
-      if (str == null || isNaN(+str)) return str;
+      if (str == null || isNaN(+str)) return str+"";
       var strList = String(str).split('.');
       return strList[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,') + (strList[1] ? '.' + strList[1] : '')
     case '-':
@@ -147,10 +152,10 @@ export function rgBrowserType(test360) {
   }
 }
 
-export function rgAllowInteger(str, type, len) {
+export function rgAllowInteger(str, len, type) {
   var reg1, reg2, endVal;
   str = String(str);
-  len = len || 9;
+  len = +len;
   type = type || 'all';
   switch (type) {
     case 'all':
@@ -163,8 +168,11 @@ export function rgAllowInteger(str, type, len) {
         var rp = s2 || s1;
         return rp === '-' ? w.slice(0, -1) : w.replace(rp, '');
       })
-      len = endVal.indexOf('-') > -1 ? len + 1 : len;
-      return endVal.slice(0, len);
+      if (len) {
+        len = endVal.indexOf('-') > -1 ? len + 1 : len;
+        return endVal.slice(0, len)
+      } 
+      return endVal;
     case '+':
       reg1 = /\D+/g;
       reg2 = /^0(\d+)/;
@@ -172,7 +180,7 @@ export function rgAllowInteger(str, type, len) {
       endVal = endVal.replace(reg2, function(w, s1) {
         return w.replace(s1, '');
       })
-      return endVal.slice(0, len);
+      return len ? endVal.slice(0, len) : endVal;
     case '-':
       reg1 = /^[^-]+/;
       reg2 = /^-(?:(\D+)|\d+(\D+)|0(\d+))/;
@@ -181,17 +189,21 @@ export function rgAllowInteger(str, type, len) {
         var rp = s1 || s2 || s3;
         return rp === '-' ? w.slice(0, -1) : w.replace(rp, '');
       })
-      return endVal.slice(0, len + 1);
+      if (len) {
+        len = endVal.indexOf('-') > -1 ? len + 1 : len;
+        return endVal.slice(0, len)
+      } 
+      return endVal;
     default:
       return str;
   }
 }
 
-export function rgAllowFloat(str, type, integerLen, floatLen) {
+export function rgAllowFloat(str, floatLen, type, integerLen) {
   var reg1, reg2, reg3, endVal, splitAry;
   str = String(str);
   type = type || 'all';
-  integerLen = integerLen || 9;
+  integerLen = +integerLen
   floatLen = floatLen || 2;
   switch (type) {
     case 'all':
@@ -226,10 +238,18 @@ export function rgAllowFloat(str, type, integerLen, floatLen) {
       })
       splitAry = endVal.split('.');
       if (splitAry.length === 1) {
-        endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
+        if (integerLen) {
+          endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
+        } else {
+          endVal = splitAry[0];
+        }
       } else {
         var afVal = '.' + splitAry[1].substring(0, floatLen);
-        endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) + afVal : splitAry[0].substring(0, integerLen) + afVal;
+        if (integerLen) {
+          endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) + afVal : splitAry[0].substring(0, integerLen) + afVal;
+        } else {
+          endVal = splitAry[0] + afVal
+        }
       }
       return endVal;
     case '+':
@@ -255,9 +275,9 @@ export function rgAllowFloat(str, type, integerLen, floatLen) {
       })
       splitAry = endVal.split('.');
       if (splitAry.length === 1) {
-        endVal = splitAry[0].substring(0, integerLen);
+        endVal = integerLen ?  splitAry[0].substring(0, integerLen) : splitAry[0];
       } else {
-        endVal = splitAry[0].substring(0, integerLen) + '.' + splitAry[1].substring(0, floatLen);
+        endVal = integerLen ? splitAry[0].substring(0, integerLen) + '.' + splitAry[1].substring(0, floatLen) : splitAry[0] + '.' + splitAry[1].substring(0, floatLen);
       }
       return endVal;
     case '-':
@@ -292,10 +312,17 @@ export function rgAllowFloat(str, type, integerLen, floatLen) {
       })
       splitAry = endVal.split('.');
       if (splitAry.length === 1) {
-        endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
+        endVal = integerLen ? splitAry[0].substring(0, integerLen + 1) : splitAry[0]
+        // if (integerLen) {
+
+        //   endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
+        // } else {
+        //   endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
+        // }
       } else {
         var afVal2 = '.' + splitAry[1].substring(0, floatLen);
-        endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) + afVal2 : splitAry[0].substring(0, integerLen) + afVal;
+        //endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) + afVal2 : splitAry[0].substring(0, integerLen) + afVal;
+        endVal = integerLen ? splitAry[0].substring(0, integerLen + 1) + afVal2 : splitAry[0] + afVal;
       }
       return endVal;
     default:

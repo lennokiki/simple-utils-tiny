@@ -1,7 +1,3 @@
-// const testsContext = require.context('./specs', true, /\.spec$/)
-
-// testsContext.keys().forEach(testsContext)
-
 // requires all tests in `project/test/src/components/**/index.js`
 const tests = require.context('./specs', true,  /\.spec$/);
  
