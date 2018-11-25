@@ -87,7 +87,7 @@ export function rgThousandMark(str, type) {
   type = type || '+';
   switch (type) {
     case '+':
-      if (str == null || isNaN(+str)) return str+"";
+      if (str == null || isNaN(+str)) return str + '';
       var strList = String(str).split('.');
       return strList[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,') + (strList[1] ? '.' + strList[1] : '')
     case '-':
@@ -171,7 +171,7 @@ export function rgAllowInteger(str, len, type) {
       if (len) {
         len = endVal.indexOf('-') > -1 ? len + 1 : len;
         return endVal.slice(0, len)
-      } 
+      }
       return endVal;
     case '+':
       reg1 = /\D+/g;
@@ -192,7 +192,7 @@ export function rgAllowInteger(str, len, type) {
       if (len) {
         len = endVal.indexOf('-') > -1 ? len + 1 : len;
         return endVal.slice(0, len)
-      } 
+      }
       return endVal;
     default:
       return str;
@@ -275,7 +275,7 @@ export function rgAllowFloat(str, floatLen, type, integerLen) {
       })
       splitAry = endVal.split('.');
       if (splitAry.length === 1) {
-        endVal = integerLen ?  splitAry[0].substring(0, integerLen) : splitAry[0];
+        endVal = integerLen ? splitAry[0].substring(0, integerLen) : splitAry[0];
       } else {
         endVal = integerLen ? splitAry[0].substring(0, integerLen) + '.' + splitAry[1].substring(0, floatLen) : splitAry[0] + '.' + splitAry[1].substring(0, floatLen);
       }
@@ -313,15 +313,8 @@ export function rgAllowFloat(str, floatLen, type, integerLen) {
       splitAry = endVal.split('.');
       if (splitAry.length === 1) {
         endVal = integerLen ? splitAry[0].substring(0, integerLen + 1) : splitAry[0]
-        // if (integerLen) {
-
-        //   endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
-        // } else {
-        //   endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) : splitAry[0].substring(0, integerLen);
-        // }
       } else {
         var afVal2 = '.' + splitAry[1].substring(0, floatLen);
-        //endVal = splitAry[0].indexOf('-') > -1 ? splitAry[0].substring(0, integerLen + 1) + afVal2 : splitAry[0].substring(0, integerLen) + afVal;
         endVal = integerLen ? splitAry[0].substring(0, integerLen + 1) + afVal2 : splitAry[0] + afVal;
       }
       return endVal;
