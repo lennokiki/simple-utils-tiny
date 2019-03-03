@@ -1,9 +1,10 @@
 {
   "name": "simple-utils-tiny",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Some simple regexp utils function for js",
   "main": "dist/simple-utils-tiny.min.js",
   "module": "dist/simple-utils-tiny.esm.js",
+  "files": ["dist"],
   "scripts": {
     "test": "karma start test/unit/karma.config.js",
     "lint": "eslint src/*.js index.js",
