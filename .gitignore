@@ -3,3 +3,4 @@ package-lock.json
 .DS_Store
 node_modules/
 .idea
+.size-snapshot.json
