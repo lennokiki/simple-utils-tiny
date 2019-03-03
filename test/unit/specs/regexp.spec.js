@@ -1,5 +1,5 @@
 import { rgIsInteger, rgIsFloat, rgIsPhone, rgIsTelOrMobile, rgIsTel, rgIsChinese, rgIsEmail, rgIsID,
-  rgIsUrl, rgIsPC, rgThousandMark, rgBrowserType, rgAllowInteger, rgAllowFloat } from '../../../files/regexp.js'
+  rgIsUrl, rgIsPC, rgThousandMark, rgBrowserType, rgAllowInteger, rgAllowFloat } from '@/regexp.js'
 var expect = require('chai').expect;
 
 describe('测试rgIsInteger方法，判断目标是否是整数', function() {

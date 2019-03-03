@@ -1,11 +1,13 @@
 {
   "name": "simple-utils-tiny",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Some simple regexp utils function for js",
-  "main": "index.js",
+  "main": "dist/simple-utils-tiny.min.js",
+  "module": "dist/simple-utils-tiny.esm.js",
   "scripts": {
     "test": "karma start test/unit/karma.config.js",
-    "lint": "eslint files/*.js index.js"
+    "lint": "eslint src/*.js index.js",
+    "build": "rimraf dist/* && rollup -c build/build.js"
   },
   "keywords": [
     "utils",
@@ -30,6 +32,11 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.5",
     "mocha": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.4.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-terser": "^4.0.4",
     "webpack": "^4.23.1"
   },
   "dependencies": {}

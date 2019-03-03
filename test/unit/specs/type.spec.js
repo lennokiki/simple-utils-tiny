@@ -1,4 +1,4 @@
-import { typeIsEqual, typeIs } from '../../../files/type.js'
+import { typeIsEqual, typeIs } from '@/type.js'
 var expect = require('chai').expect;
 
 describe("typeIsEqual判断两个对象值是否相等", function() {
@@ -37,7 +37,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isNumber(null)).to.be.false;
     expect(typeIs.isNumber([])).to.be.false;
     expect(typeIs.isString(true)).to.be.false;
-    expect(typeIs.isNumber(function(){})).to.be.false;    
+    expect(typeIs.isNumber(function(){})).to.be.false;
   })
   it("typeIs.isFunction 判断是否是函数", function() {
     expect(typeIs.isFunction(function() {})).to.be.true;
@@ -59,7 +59,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isBoolean()).to.be.false;
     expect(typeIs.isBoolean([])).to.be.false;
     expect(typeIs.isBoolean({})).to.be.false;
-  }) 
+  })
   it("typeIs.isObject 判断是否是纯对象", function() {
     expect(typeIs.isObject({})).to.be.true;
     expect(typeIs.isObject(false)).to.be.false;
@@ -69,7 +69,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isObject(null)).to.be.false;
     expect(typeIs.isObject()).to.be.false;
     expect(typeIs.isObject([])).to.be.false;
-  })    
+  })
   it("typeIs.isArray 判断是否是数组", function() {
     expect(typeIs.isArray([])).to.be.true;
     expect(typeIs.isArray({})).to.be.false;
@@ -90,7 +90,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isRegExp("name")).to.be.false;
     expect(typeIs.isRegExp(null)).to.be.false;
     expect(typeIs.isRegExp()).to.be.false;
-  })       
+  })
   it("typeIs.isArguments 判断是否是Arguments", function() {
     expect(typeIs.isArguments(arguments)).to.be.true;
     expect(typeIs.isArguments([])).to.be.false;
@@ -112,7 +112,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isDate("name")).to.be.false;
     expect(typeIs.isDate(null)).to.be.false;
     expect(typeIs.isDate()).to.be.false;
-  }) 
+  })
   it("typeIs.isSymbol 判断是否是Symbol", function() {
     expect(typeIs.isSymbol(Symbol("zz"))).to.be.true;
     expect(typeIs.isSymbol([])).to.be.false;
@@ -145,7 +145,7 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isPromise("name")).to.be.false;
     expect(typeIs.isPromise(null)).to.be.false;
     expect(typeIs.isPromise()).to.be.false;
-  }) 
+  })
   it("typeIs.isSet 判断是否是Set", function() {
     expect(typeIs.isSet(new Set())).to.be.true;
     expect(typeIs.isSet([])).to.be.false;
@@ -156,5 +156,5 @@ describe("typeIs 判断各种类型", function() {
     expect(typeIs.isSet("name")).to.be.false;
     expect(typeIs.isSet(null)).to.be.false;
     expect(typeIs.isSet()).to.be.false;
-  })                     
+  })
 })

@@ -1,4 +1,4 @@
-import { stringTrim, stringTransCase } from '../../../files/string.js'
+import { stringTrim, stringTransCase } from '@/string.js'
 var expect = require('chai').expect;
 
 describe('测试stringTrim方法，过滤指定位置的空格', function() {
@@ -17,7 +17,7 @@ describe('测试stringTrim方法，过滤指定位置的空格', function() {
   });
   it('过滤中部空格', function() {
     expect(stringTrim(tar, "middle")).to.be.equal("  aabbccde ");
-  });      
+  });
 });
 
 describe('测试stringTransCase方法， 转换大小写', function() {
