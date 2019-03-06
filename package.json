@@ -22,7 +22,8 @@
   },
   "keywords": [
     "utils",
-    "js"
+    "js",
+    "regexp"
   ],
   "author": "Lenno kiki",
   "license": "ISC",

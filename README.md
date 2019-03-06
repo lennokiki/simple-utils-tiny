@@ -207,13 +207,6 @@ const res = rgIsTel(telNum)
 const res = rgIsTelOrMobile(phoneOrTelNum) 
 ```
 
-##### rgIsTel(str)
-
-```js
-// Judge target whether is a telphone number
-const res = rgIsTel(telNum) 
-```
-
 ##### rgIsChinese(str)
 
 ```js
