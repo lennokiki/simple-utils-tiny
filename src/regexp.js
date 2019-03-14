@@ -104,14 +104,14 @@ export function rgBrowserType(test360) {
   var isEdge = ua.indexOf('edge') > -1;
   var isFF = ua.indexOf('firefox') > -1;
   var isOpera = ua.indexOf('opera') > -1 || ua.indexOf('opr') > -1;
-  var isSafari = ua.indexOf('Safari') > -1 && ua.indexOf('chrome') === -1;
+  var isSafari = ua.indexOf('safari') > -1 && ua.indexOf('chrome') === -1;
   var isChrome = ua.indexOf('chrome') > -1 && ua.indexOf('safari') > -1;
   var isQQ = ua.indexOf('qqbrowser') > -1;
   var isWechat = ua.indexOf('micromessenger') > -1;
   var isUC = ua.indexOf('ubrowser') > -1;
-  var isMaxthon = ua.indexOf('maxthon') > -1; // 遨游
-  var isLB = ua.indexOf('lbbrowser') > -1; // 猎豹
-  var isSougou = ua.indexOf('metasr') > -1 // 搜狗
+  var isMaxthon = ua.indexOf('maxthon') > -1;
+  var isLB = ua.indexOf('lbbrowser') > -1;
+  var isSougou = ua.indexOf('metasr') > -1;
   var isBaidu = ua.indexOf('bidubrowser') > -1;
   var is360 = function() {
     var mimeType = navigator.mimeTypes;

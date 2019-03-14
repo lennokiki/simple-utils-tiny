@@ -1,6 +1,6 @@
 {
   "name": "simple-utils-tiny",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Some simple regexp utils function for js",
   "main": "dist/simple-utils-tiny.min.js",
   "module": "dist/simple-utils-tiny.esm.js",
@@ -18,7 +18,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": ["eslint --fix", "git add"]
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "keywords": [
     "utils",
