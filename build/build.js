@@ -4,7 +4,7 @@ const sizeSnapshot = require('rollup-plugin-size-snapshot').sizeSnapshot;
 const terser = require('rollup-plugin-terser').terser;
 
 const resolve = _path => path.resolve(__dirname, '../', _path)
-const name = "SimpleUtilsTiny"
+const name = "sUtils"
 const input = resolve('src/index.js')
 
 export default [
