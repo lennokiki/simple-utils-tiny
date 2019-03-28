@@ -87,9 +87,8 @@ export function rgThousandMark(str, type) {
   type = type || '+';
   switch (type) {
     case '+':
-      if (str == null || isNaN(+str)) return str + '';
-      var strList = String(str).split('.');
-      return strList[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,') + (strList[1] ? '.' + strList[1] : '')
+      if (str == null) return str + '';
+      return String(str).replace(/\d(?=(?:\d{3})+(?!\d+))(?<!\.\d+)/g, '$&,');
     case '-':
       return String(str).replace(/,/g, '');
     default:

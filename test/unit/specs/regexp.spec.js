@@ -109,6 +109,7 @@ describe('测试rgThousandMark方法，添加千分符或者删掉', function() 
     expect(rgThousandMark(300000)).to.be.equal('300,000');
     expect(rgThousandMark(300000.345)).to.be.equal('300,000.345');
     expect(rgThousandMark(300)).to.be.equal('300');
+    expect(rgThousandMark('The number 1112223334.5564 and 111 and 222333 and 32123.1')).to.be.equal('The number 1,112,223,334.5564 and 111 and 222,333 and 32,123.1');
     expect(rgThousandMark('300,000,000', '-')).to.be.equal('300000000');
   });
 });

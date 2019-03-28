@@ -46,7 +46,6 @@ export default [
     plugins: [
       buble(),
       sizeSnapshot(),
-      terser()
     ]
   }
 ]

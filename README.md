@@ -1,5 +1,10 @@
 # simle-utils-tiny
 
+![npm](https://img.shields.io/npm/v/simple-utils-tiny.svg)
+![npm](https://img.shields.io/npm/dt/simple-utils-tiny.svg)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-utils-tiny.svg?color=46c018)
+![GitHub last commit](https://img.shields.io/github/last-commit/lennokiki/simple-utils-tiny.svg)
+
 Some useful regexp utils function for javascript
 
 ## Features
@@ -272,6 +277,7 @@ const res = rgIsPC()
 ```js
 // Add or delete number thousand mark. default '+' add
 const res = rgThousandMark(12345.34) // 12,345.34
+const res = rgThousandMark('The number 1112223334.5564 and 111 and 222333 and 32123.1') // The number 1,112,223,334.5564 and 111 and 222,333 and 32,123.1
 const res = rgThousandMark('12,345.34', '-') // 12345.34
 ```
 
