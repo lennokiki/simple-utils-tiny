@@ -82,7 +82,6 @@ export function rgIsPC() {
   return flag;
 }
 
-/* 添加千分符 */
 export function rgThousandMark(str, type) {
   type = type || '+';
   switch (type) {
@@ -96,7 +95,6 @@ export function rgThousandMark(str, type) {
   }
 }
 
-/* 返回浏览器类型 */
 export function rgBrowserType(test360) {
   var ua = navigator.userAgent.toLowerCase();
   var isIE = ua.indexOf('trident') > -1;

@@ -1,4 +1,5 @@
-import { stringTrim, stringTransCase, stringColor, stringColor16ToRgb, stringColorRgbTo16 } from '@/string.js'
+import { stringTrim, stringTransCase, stringColor, stringColor16ToRgb,
+  stringColorRgbTo16, stringNumToLetter } from '@/string.js'
 var expect = require('chai').expect;
 
 describe('测试stringTrim方法，过滤指定位置的空格', function() {
@@ -72,5 +73,25 @@ describe('测试rgb转换16进制', function() {
     expect(stringColorRgbTo16('rgb(237,152,126)')).to.be.equal('#ed987e');
     expect(stringColorRgbTo16('rgb(160,152,26)')).to.be.equal('#a0981a');
     expect(stringColorRgbTo16('rgb(0,298,0)')).to.be.equal('rgb(0,298,0)');
+  })
+})
+
+describe('测试数字转26进制字母', function() {
+  it('数值转换字母', function() {
+    expect(stringNumToLetter(0)).to.be.equal('A');
+    expect(stringNumToLetter(0, 'lower')).to.be.equal('a');
+    expect(stringNumToLetter(25)).to.be.equal('Z');
+    expect(stringNumToLetter(26)).to.be.equal('AA');
+    expect(stringNumToLetter(27)).to.be.equal('AB');
+    expect(stringNumToLetter(51)).to.be.equal('AZ');
+    expect(stringNumToLetter(52)).to.be.equal('BA');
+    expect(stringNumToLetter(53)).to.be.equal('BB');
+    expect(stringNumToLetter(76)).to.be.equal('BY');
+    expect(stringNumToLetter(77)).to.be.equal('BZ');
+    expect(stringNumToLetter(78)).to.be.equal('CA');
+    expect(stringNumToLetter(27 * 26 - 2)).to.be.equal('ZY');
+    expect(stringNumToLetter(27 * 26)).to.be.equal('AAA');
+    expect(stringNumToLetter(26 * 26 + 1)).to.be.equal('ZB');
+    expect(stringNumToLetter(27 * 26 * 26 )).to.be.equal('ZZA');
   })
 })

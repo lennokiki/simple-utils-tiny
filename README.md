@@ -88,6 +88,16 @@ const color1 = stringColorRgbTo16('rgb(0,0,0)') // '#000000'
 const color2 = stringColorRgbTo16('RGB(234,239,51)') // '#eaef33'
 ```
 
+##### stringNumToLetter(index[, type])
+
+```js
+// Converting the number key to letter just like the excel columns title
+// type default 'upper', the other is 'lower'
+const letter1 = stringColorRgbTo16(0) // 'A'
+const letter2 = stringColorRgbTo16(25, 'lower') // 'z'
+const letter3 = stringColorRgbTo16(26 * 26) // 'ZA'
+```
+
 ### Type
 
 ##### typeIsEqual(obj1, obj2)

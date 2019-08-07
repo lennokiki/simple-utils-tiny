@@ -1,3 +1,8 @@
+var _gLetters = {
+  lower: null,
+  upper: null
+}
+
 export function stringTrim(str, type) {
   var regList = {
     all: /\s/g,
@@ -71,4 +76,33 @@ export function stringColorRgbTo16(color) {
     }, '#')
   }
   return color;
+}
+
+export function stringNumToLetter(num, type) {
+  if (typeof num === 'number' && !isNaN(num) && num >= 0) {
+    var defaultType = type || 'upper';
+    var letters = _gLetters[defaultType];
+    if (!letters) {
+      var range = type === 'lower' ? 97 : 65;
+      var ary = new Array(26);
+      for (var i = 0; i < 26; i++) {
+        ary[i] = String.fromCharCode(i + range);
+      }
+      letters = _gLetters[defaultType] = ary
+    }
+
+    var formatter = function (val) {
+      var delivery = Math.floor(val) % 26;
+      var lastLetter = letters[delivery];
+      var next = Math.floor(val / 26) - 1;
+      var nextVal = '';
+      if (next >= 0) {
+        nextVal = formatter(next);
+      }
+      return nextVal + lastLetter;
+    }
+
+    return formatter(num);
+  }
+  return num;
 }
