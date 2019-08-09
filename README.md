@@ -93,9 +93,10 @@ const color2 = stringColorRgbTo16('RGB(234,239,51)') // '#eaef33'
 ```js
 // Converting the number key to letter just like the excel columns title
 // type default 'upper', the other is 'lower'
-const letter1 = stringColorRgbTo16(0) // 'A'
-const letter2 = stringColorRgbTo16(25, 'lower') // 'z'
-const letter3 = stringColorRgbTo16(26 * 26) // 'ZA'
+const letter1 = stringNumToLetter(0) // 'A'
+const letter2 = stringNumToLetter(25, 'lower') // 'z'
+const letter2 = stringNumToLetter(26, 'lower') // 'aa'
+const letter3 = stringNumToLetter(26 * 26) // 'ZA'
 ```
 
 ### Type

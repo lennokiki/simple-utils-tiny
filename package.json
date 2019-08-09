@@ -1,6 +1,6 @@
 {
   "name": "simple-utils-tiny",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Some simple regexp utils function for js",
   "main": "dist/simple-utils-tiny.js",
   "module": "dist/simple-utils-tiny.esm.js",
