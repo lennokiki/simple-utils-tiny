@@ -21,18 +21,23 @@ Using npm:
 $ npm i simple-utils-tiny -S
 ```
 
+Using script cdn
+```
+<script src="https://cdn.jsdelivr.net/npm/simple-utils-tiny@1.1.2/dist/simple-utils-tiny.min.js"></script>
+```
+
 ## Quickly Start
 
 Using ESModule to import
 
 ```js
-// to import part api
+// to import part apis
 import { stringTrim, rgAllowFloat } from 'simple-utils-tiny'
 const res = stringTrim(' abc  dd ef g', 'around') // 'abc  dd ef g'
 
 // to import whole api
-import SUtils from 'simple-utils-tiny'
-const res = SUtils.stringTrim(' abc  dd ef g', 'middle') // ' abcddefg'
+import sUtils from 'simple-utils-tiny'
+const res = sUtils.stringTrim(' abc  dd ef g', 'middle') // ' abcddefg'
 ```
 
 ## simple-utils-tiny API
