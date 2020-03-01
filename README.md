@@ -23,7 +23,7 @@ $ npm i simple-utils-tiny -S
 
 Using script cdn
 ```
-<script src="https://cdn.jsdelivr.net/npm/simple-utils-tiny@1.1.2/dist/simple-utils-tiny.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-utils-tiny/dist/simple-utils-tiny.min.js"></script>
 ```
 
 ## Quickly Start
