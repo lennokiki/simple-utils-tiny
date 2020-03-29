@@ -69,6 +69,8 @@ describe('测试rgIsEmail方法，判断目标是否是邮箱', function() {
     expect(rgIsEmail('abc@163.com')).to.be.true;
     expect(rgIsEmail('1232323@qq.com')).to.be.true;
     expect(rgIsEmail('dsad_dd-23wwW@fox.com')).to.be.true;
+    expect(rgIsEmail('dsad_dd-23@fox.com.cn')).to.be.true;
+    expect(rgIsEmail('dsad_dd-23.love@fox.com.cn')).to.be.true;
     expect(rgIsEmail('hello world')).to.be.false;
   });
 });

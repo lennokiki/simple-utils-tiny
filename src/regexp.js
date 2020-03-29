@@ -53,7 +53,7 @@ export function rgIsChinese(str) {
 }
 
 export function rgIsEmail(str) {
-  var reg = /^[\w-.]+@\w+\.\w+$/;
+  var reg = /^[\w-.]+@\w+(\.\w+)+$/;
   return reg.test(str);
 }
 

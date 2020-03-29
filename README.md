@@ -21,6 +21,12 @@ Using npm:
 $ npm i simple-utils-tiny -S
 ```
 
+Or yarn
+
+```bash
+$ yarn add simple-utils-tiny
+```
+
 Using script cdn
 ```
 <script src="https://cdn.jsdelivr.net/npm/simple-utils-tiny/dist/simple-utils-tiny.min.js"></script>
