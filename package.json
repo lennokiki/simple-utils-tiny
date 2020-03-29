@@ -5,7 +5,8 @@
   "main": "dist/simple-utils-tiny.js",
   "module": "dist/simple-utils-tiny.esm.js",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "typings": "types/index.d.ts",
   "scripts": {

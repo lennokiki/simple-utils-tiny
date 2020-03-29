@@ -200,7 +200,7 @@ function rgIsChinese(str) {
 }
 
 function rgIsEmail(str) {
-  var reg = /^[\w-.]+@\w+\.\w+$/;
+  var reg = /^[\w-.]+@\w+(\.\w+)+$/;
   return reg.test(str);
 }
 
