@@ -28,6 +28,7 @@ $ yarn add simple-utils-tiny
 ```
 
 Using script cdn
+
 ```
 <script src="https://cdn.jsdelivr.net/npm/simple-utils-tiny/dist/simple-utils-tiny.min.js"></script>
 ```
@@ -116,8 +117,8 @@ const letter3 = stringNumToLetter(26 * 26) // 'ZA'
 
 ```js
 // Judge whether the two objects are equal in value. return boolean
-const obj1 = { a: '1', b: [1, 2, 3]}
-const obj2 = { a: '1', b: [1, 2, 3]}
+const obj1 = { a: '1', b: [1, 2, 3] }
+const obj2 = { a: '1', b: [1, 2, 3] }
 const res = typeIsEqual(obj1, obj2) // true
 ```
 
@@ -210,10 +211,10 @@ type defaul 'all', len default unlimited
 const res = rgAllowInteger(yourInputValue)
 
 // Only positive integer, and max length 5
-const res = rgAllowInteger(yourInputValue, '+', 5)
+const res = rgAllowInteger(yourInputValue, 5, '+')
 
 // Only negative integer and unlimited size
-const res = rgAllowInteger(yoruInputValue, '-')
+const res = rgAllowInteger(yoruInputValue, Number.POSITIVE_INFINITY, '-')
 ```
 
 ##### rgAllowFloat(str[, floatLen, type, integerLen])
@@ -236,7 +237,6 @@ const res = rgAllowFloat(yourInputValue, 4, '+', 5)
 // max float length 1
 const res = rgAllowFloat(yourInputValue, 1, '-', 7)
 ```
-
 
 ##### rgIsPhone(str)
 
